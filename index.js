@@ -23,7 +23,16 @@ const modal = new tingle.modal({
 });
 
 // this is where you set the content inside of the modal
-modal.setContent("<h1>here's some content</h1>");
+//modal.setContent("<h1>This is a Modal</h1>");
+
+// add more content than just an h1 using template
+modal.setContent(document.querySelector("template").innerHTML);
+
+//open modal with html button
+document.querySelector(".btn").addEventListener("click", () => {
+  console.log("working");
+  modal.open();
+});
 
 // add a button that will close modal or maybe could have other funtion
 modal.addFooterBtn("Button 1", "tingle-btn tingle-btn--primary", function() {
@@ -38,7 +47,7 @@ modal.addFooterBtn("Button 2", "tingle-btn tingle-btn--danger", function() {
 });
 
 // open modal
-modal.open();
+//modal.open();
 
 // close modal
-modal.close();
+//modal.close();

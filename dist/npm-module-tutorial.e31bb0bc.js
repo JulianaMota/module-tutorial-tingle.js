@@ -149,8 +149,15 @@ var modal = new _tingle.default.modal({
     return false; // nothing happens
   }
 }); // this is where you set the content inside of the modal
+//modal.setContent("<h1>This is a Modal</h1>");
+// add more content than just an h1 using template
 
-modal.setContent("<h1>here's some content</h1>"); // add a button that will close modal or maybe could have other funtion
+modal.setContent(document.querySelector("template").innerHTML); //open modal with html button
+
+document.querySelector(".btn").addEventListener("click", function () {
+  console.log("working");
+  modal.open();
+}); // add a button that will close modal or maybe could have other funtion
 
 modal.addFooterBtn("Button 1", "tingle-btn tingle-btn--primary", function () {
   // here you can add othe funtion for the button
@@ -161,10 +168,9 @@ modal.addFooterBtn("Button 2", "tingle-btn tingle-btn--danger", function () {
   // here you can add othe funtion for the button
   modal.close();
 }); // open modal
-
-modal.open(); // close modal
-
-modal.close();
+//modal.open();
+// close modal
+//modal.close();
 },{"tingle.js":"node_modules/tingle.js/dist/tingle.min.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
